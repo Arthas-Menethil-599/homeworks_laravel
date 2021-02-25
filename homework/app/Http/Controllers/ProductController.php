@@ -35,7 +35,7 @@ class ProductController extends Controller
     {
         $product = auth()->user()
             ->products()
-            ->create(['product_name' => $request->product_name, 'product_description' => $request->product_description, 'product_creator' => $request->product_creator]);
+            ->create($request->validatedWithImage());
         return redirect(route('products.show', $product));
     }
 
@@ -56,14 +56,25 @@ class ProductController extends Controller
 
     public function update(ProductRequest $request, Product $product)
     {
-        $product->update(['product_name' => $request->product_name, 'product_description' => $request->product_description, 'product_creator' => $request->product_creator]);
+            $product->update($request->validatedWithImage());
         return redirect()->route('products.show', $product);
     }
 
 
     public function destroy(Product $product)
     {
+        $product->deleteImage();
         $product->delete();
         return redirect(route('products.index'));
+    }
+
+    function removeImage(Product $product) {
+        $this->authorize('update',$product);
+        $product->deleteImage();
+        $product->update([
+            'image_path' => null
+        ]);
+
+        return back();
     }
 }

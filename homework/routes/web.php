@@ -19,3 +19,5 @@ Route::redirect('/', 'products');
 
 Route::resource('products', ProductController::class);
 
+Route::put('products/{product}/removeImage', [ProductController::class, 'removeImage'])
+    ->name('products.removeImage');

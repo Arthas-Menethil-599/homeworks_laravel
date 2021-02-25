@@ -33,6 +33,10 @@ $product = $product ?? null;
                 <div>{{$message}}</div>
                 @enderror
             </div>
+            <div>
+                <label for="image">Обложка</label>
+                <input type="file" name="image" id="image" />
+            </div>
 
             <button>{{ $product ? 'Обновить' : 'Добавить' }}</button>
         </div>

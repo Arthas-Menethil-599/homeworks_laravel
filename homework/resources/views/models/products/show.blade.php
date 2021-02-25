@@ -6,6 +6,16 @@
             <a href="{{ route('products.edit', $product) }}"> Редактировать </a>
         </div>
     @endcan
+    @if($product->image_path)
+        <img width="200px" src="{{Storage::url($product->image_path)}}"/>
+        @can('update', $product)
+            <form action="{{route('products.removeImage', $product)}}" method="post">
+                @csrf
+                @method('put')
+                <button>Удалить изображение</button>
+            </form>
+        @endcan
+    @endif
     <div>
         Компания: <b>{{$product->product_creator}}</b>
     </div>
