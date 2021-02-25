@@ -22,9 +22,8 @@ class CreateProductsTable extends Migration
             //Решил что имя продукта не будет уникальным так как бывают одни и те же продукты
             //от разных компаний или пользователей выставляющих товар
             $table->string('product_name');
-            $table->decimal('product_price',8,2);
             $table->string('product_description');
-            $table->string('product_category');
+            $table->string('product_creator');
             $table->timestamps();
         });
     }

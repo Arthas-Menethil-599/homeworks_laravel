@@ -108,6 +108,7 @@
       <path value="$PROJECT_DIR$/homework/vendor/facade/ignition" />
       <path value="$PROJECT_DIR$/homework/vendor/league/flysystem" />
       <path value="$PROJECT_DIR$/homework/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/homework/vendor/laravel/breeze" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

@@ -114,6 +114,7 @@
       <excludeFolder url="file://$MODULE_DIR$/homework/vendor/facade/ignition" />
       <excludeFolder url="file://$MODULE_DIR$/homework/vendor/league/flysystem" />
       <excludeFolder url="file://$MODULE_DIR$/homework/vendor/league/commonmark" />
+      <excludeFolder url="file://$MODULE_DIR$/homework/vendor/laravel/breeze" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
